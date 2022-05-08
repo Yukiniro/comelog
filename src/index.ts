@@ -1,11 +1,13 @@
 import { isUndefined } from "bittydash";
 import { LogOption } from "./types";
 import { styleToCss } from "./util";
+import { colors, bgColors } from "./preset/colorsStyle";
 
 class Comelog {
   private _str: string;
   private _styles: Array<string>;
   private _option: LogOption;
+  [name: string]: any;
 
   constructor() {
     this._str = "";
@@ -36,16 +38,6 @@ class Comelog {
     this.composeStyle(
       {
         fontWeight: "bold",
-      },
-      this.composeMessage(message)
-    );
-    return this;
-  }
-
-  red(message?: string): this {
-    this.composeStyle(
-      {
-        color: "red",
       },
       this.composeMessage(message)
     );
@@ -88,6 +80,21 @@ class Comelog {
     this._str = "";
     this._styles.length = 0;
   }
+}
+
+for (const [key, value] of Object.entries({ ...colors, ...bgColors })) {
+  Object.defineProperty(Comelog.prototype, key, {
+    value: function (message: string): Comelog {
+      const style: { [key: string]: string } = {};
+      if (key.indexOf("bg") === 0) {
+        style.backgroundColor = value;
+      } else {
+        style.color = value;
+      }
+      this.composeStyle(style, this.composeMessage(message));
+      return this;
+    },
+  });
 }
 
 export default new Comelog();

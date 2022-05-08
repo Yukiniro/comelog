@@ -1,5 +1,6 @@
+import { text } from "stream/consumers";
 import { expect, test } from "vitest";
-import { styleToCss } from "../src/util";
+import { styleToCss, capitalize } from "../src/util";
 
 test("styleToCss", () => {
   expect(
@@ -9,4 +10,8 @@ test("styleToCss", () => {
       color: "red",
     })
   ).toBe("font-weight: bold; background-color: blue; color: red");
+});
+
+test("capitalize", () => {
+  expect(capitalize("hello world")).toBe("Hello world");
 });
