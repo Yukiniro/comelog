@@ -1,5 +1,6 @@
 import { isUndefined } from "bittydash";
 import { LogOption } from "./types";
+import { styleToCss } from "./util";
 
 class Comelog {
   private _str: string;
@@ -32,12 +33,22 @@ class Comelog {
   }
 
   bold(message?: string): this {
-    this.composeStyle("font-weight: bold", this.composeMessage(message));
+    this.composeStyle(
+      {
+        fontWeight: "bold",
+      },
+      this.composeMessage(message)
+    );
     return this;
   }
 
   red(message?: string): this {
-    this.composeStyle("color: red", this.composeMessage(message));
+    this.composeStyle(
+      {
+        color: "red",
+      },
+      this.composeMessage(message)
+    );
     return this;
   }
 
@@ -54,13 +65,14 @@ class Comelog {
     }
   }
 
-  composeStyle(style: string = "", shouldMergeStyle: boolean) {
+  composeStyle(style: string | object = "", shouldMergeStyle: boolean) {
+    const styleCss = styleToCss(style);
     if (shouldMergeStyle) {
       const tailIndex = this._styles.length - 1;
       const tailValue = this._styles[tailIndex];
-      this._styles[tailIndex] = `${tailValue}; ${style}`;
+      this._styles[tailIndex] = `${tailValue}; ${styleCss}`;
     } else {
-      this._styles.push(style);
+      this._styles.push(styleCss);
     }
   }
 

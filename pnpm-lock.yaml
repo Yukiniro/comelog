@@ -9,6 +9,7 @@ specifiers:
   '@rollup/plugin-typescript': ^8.3.1
   '@yukiniro/eslint-config': ^0.0.3
   bittydash: ^0.0.12
+  camelcase-to-kebab: ^1.0.0
   eslint: ^8.11.0
   prettier: ^2.6.0
   prettier-eslint: ^13.0.0
@@ -29,6 +30,7 @@ devDependencies:
   '@rollup/plugin-typescript': 8.3.1_859e05ab655ea3c900a5f26a0311c0b5
   '@yukiniro/eslint-config': 0.0.3_eslint@8.11.0
   bittydash: 0.0.12
+  camelcase-to-kebab: 1.0.0
   eslint: 8.11.0
   prettier: 2.6.0
   prettier-eslint: 13.0.0
@@ -1871,6 +1873,10 @@ packages:
   /callsites/3.1.0:
     resolution: {integrity: sha512-P8BjAsXvZS+VIDUI11hHCQEv74YT67YUi5JJFNWIqL235sBmjX4+qx9Muvls5ivyNENctx46xQLQ3aTuE7ssaQ==}
     engines: {node: '>=6'}
+    dev: true
+
+  /camelcase-to-kebab/1.0.0:
+    resolution: {integrity: sha512-ch/dj/M97PP/lfwHFNSwGdpH+AYLxOy/2TkBeSMYQNUlwLqUOsZLw7WAxWJm1U39TbPJvwirZXraHKZIUG21TA==}
     dev: true
 
   /camelcase/6.3.0:
