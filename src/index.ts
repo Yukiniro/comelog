@@ -1,12 +1,17 @@
 import { isUndefined } from "bittydash";
+import { LogOption } from "./types";
 
 class Comelog {
   private _str: string;
   private _styles: Array<string>;
+  private _option: LogOption;
 
   constructor() {
     this._str = "";
     this._styles = [];
+    this._option = {
+      separator: " ",
+    };
   }
 
   get str(): string {
@@ -15,6 +20,15 @@ class Comelog {
 
   get styles(): Array<string> {
     return this._styles;
+  }
+
+  option(value: LogOption): this {
+    this._option = {
+      ...this._option,
+      ...value,
+    };
+
+    return this;
   }
 
   bold(message?: string): this {
@@ -27,13 +41,15 @@ class Comelog {
     return this;
   }
 
-  composeMessage(message?: string): boolean {
+  composeMessage(message?: string, isFlush?: boolean): boolean {
     const msg = isUndefined(message) ? "" : message;
+    const separator =
+      this._str !== "" && msg !== "" ? this._option.separator : "";
     if (this._str.lastIndexOf("%c") === this._str.length - 2) {
-      this._str = `${this._str}${msg}`;
+      this._str = `${this._str}${separator}${msg}`;
       return true;
     } else {
-      this._str = `${this._str}%c${msg}`;
+      this._str = `${this._str}${separator}${isFlush ? "" : "%c"}${msg}`;
       return false;
     }
   }
@@ -49,7 +65,7 @@ class Comelog {
   }
 
   flush(message?: string) {
-    this._str += message;
+    this.composeMessage(message, true);
     queueMicrotask(() => {
       this.clear();
     });

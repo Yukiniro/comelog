@@ -9,6 +9,11 @@ test("flush", () => {
 
 test("style", () => {
   comelog.bold("bold").red("red").flush("flush");
-  expect(comelog.str).toBe("%cbold%credflush");
+  expect(comelog.str).toBe("%cbold %cred flush");
   expect(comelog.styles).toEqual(["font-weight: bold", "color: red"]);
+});
+
+test("option", () => {
+  comelog.option({ separator: "" }).bold("bold").red("red").flush("flush");
+  expect(comelog.str).toBe("%cbold%credflush");
 });
