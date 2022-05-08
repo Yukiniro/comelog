@@ -1,6 +1,14 @@
 import { test, expect } from "vitest";
-import { sayHello } from "../src";
+import comelog from "../src/index";
 
-test("hello world", () => {
-  expect(sayHello()).toBe("Hello World");
+test("flush", () => {
+  const text = "hello world";
+  comelog.flush(text);
+  expect(comelog.str).toBe(text);
+});
+
+test("style", () => {
+  comelog.bold("bold").red("red").flush("flush");
+  expect(comelog.str).toBe("%cbold%credflush");
+  expect(comelog.styles).toEqual(["font-weight: bold", "color: red"]);
 });
