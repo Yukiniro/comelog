@@ -1,6 +1,6 @@
 {
   "name": "comelog",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "🎨 The `comelog` is a comely and styled logger.",
   "main": "index.ts",
   "scripts": {
