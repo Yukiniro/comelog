@@ -42,6 +42,7 @@
     "@rollup/plugin-typescript": "^8.3.1",
     "@yukiniro/eslint-config": "^0.0.3",
     "bittydash": "^0.0.12",
+    "c8": "^7.11.2",
     "camelcase-to-kebab": "^1.0.0",
     "eslint": "^8.11.0",
     "prettier": "^2.6.0",
