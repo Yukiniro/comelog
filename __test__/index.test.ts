@@ -1,7 +1,7 @@
 import { test, expect } from "vitest";
-import comelog from "../src/index";
+import { comelog } from "../src/index";
 
-test("flush", () => {                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
+test("flush", () => {
   const text = "hello world";
   comelog.flush(text);
   expect(comelog.str).toBe(text);
@@ -14,7 +14,14 @@ test("style", () => {
 });
 
 test("option", () => {
-  comelog.option({ separator: "" }).bold("bold").bgSnow("bgSnow").flush("flush");
+  comelog
+    .option({ separator: "" })
+    .bold("bold")
+    .bgSnow("bgSnow")
+    .flush("flush");
   expect(comelog.str).toBe("%cbold%cbgSnowflush");
-  expect(comelog.styles).toEqual(["font-weight: bold", "background-color: #fffafa"]);
+  expect(comelog.styles).toEqual([
+    "font-weight: bold",
+    "background-color: #fffafa",
+  ]);
 });

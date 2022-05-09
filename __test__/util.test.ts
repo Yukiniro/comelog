@@ -1,4 +1,3 @@
-import { text } from "stream/consumers";
 import { expect, test } from "vitest";
 import { styleToCss, capitalize } from "../src/util";
 
