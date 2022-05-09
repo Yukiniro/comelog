@@ -97,4 +97,6 @@ for (const [key, value] of Object.entries({ ...colors, ...bgColors })) {
   });
 }
 
-export default new Comelog();
+const comelog = new Comelog();
+
+export { comelog };

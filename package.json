@@ -1,18 +1,22 @@
 {
   "name": "comelog",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "🎨 The `comelog` is a comely and styled logger.",
-  "main": "index.ts",
+  "main": "dist/comelog.cjs",
+  "module": "dist/comelog.mjs",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "rollup -c rollup.config.js",
     "preview": "vite preview",
     "lint": "npx eslint src/**",
     "prettier": "npx prettier src/** --write",
     "test": "npx vitest",
     "test:run": "npx vitest run",
     "test:coverrage": "npx vitest --coverage",
-    "publish": "npm publish"
+    "publish": "pnpm run build && pnpm publish"
   },
   "keywords": [
     "log",
@@ -33,6 +37,8 @@
     "@babel/preset-env": "^7.16.11",
     "@babel/preset-typescript": "^7.16.7",
     "@rollup/plugin-babel": "^5.3.1",
+    "@rollup/plugin-commonjs": "^22.0.0",
+    "@rollup/plugin-node-resolve": "^13.3.0",
     "@rollup/plugin-typescript": "^8.3.1",
     "@yukiniro/eslint-config": "^0.0.3",
     "bittydash": "^0.0.12",

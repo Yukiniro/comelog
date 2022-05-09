@@ -1,6 +1,7 @@
 import { babel } from "@rollup/plugin-babel";
+import { nodeResolve } from "@rollup/plugin-node-resolve";
+import commonjs from "@rollup/plugin-commonjs";
 import fileSize from "rollup-plugin-filesize";
-import { terser } from "rollup-plugin-terser";
 import typescript from "rollup-plugin-typescript2";
 import { readFile } from "fs/promises";
 
@@ -9,30 +10,22 @@ function getConfig(libraryName) {
     input: "src/index.ts",
     output: [
       {
-        file: `./dist/${libraryName}.cjs.min.js`,
+        file: `./dist/${libraryName}.cjs`,
         format: "cjs",
       },
       {
-        file: `./dist/${libraryName}.min.js`,
+        file: `./dist/${libraryName}.mjs`,
         format: "esm",
-      },
-      {
-        file: `./dist/${libraryName}.esm.min.js`,
-        format: "esm",
-      },
-      {
-        file: `./dist/${libraryName}.umd.min.js`,
-        format: "umd",
-        name: libraryName,
       },
     ],
     plugins: [
       typescript(),
+      nodeResolve(),
+      commonjs(),
       babel({
         babelHelpers: "bundled",
         presets: ["@babel/preset-env"],
       }),
-      terser(),
       fileSize(),
     ],
   };

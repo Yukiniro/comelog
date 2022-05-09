@@ -1,5 +1,5 @@
 import "./style.css";
-import comelog from "../../src/index";
+import { comelog } from "../../src/index";
 
 const app = document.querySelector<HTMLDivElement>("#app")!;
 
