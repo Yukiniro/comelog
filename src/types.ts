@@ -2,4 +2,7 @@ interface LogOption {
   separator?: string;
 }
 
-export type { LogOption };
+type Message = string;
+type Styles = Array<string>;
+
+export type { LogOption, Message, Styles };

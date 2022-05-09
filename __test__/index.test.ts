@@ -3,25 +3,21 @@ import { comelog } from "../src/index";
 
 test("flush", () => {
   const text = "hello world";
-  comelog.flush(text);
-  expect(comelog.str).toBe(text);
+  expect(comelog.flush(text)[0]).toBe(text);
 });
 
 test("style", () => {
-  comelog.bold("bold").red("red").flush("flush");
-  expect(comelog.str).toBe("%cbold %cred flush");
-  expect(comelog.styles).toEqual(["font-weight: bold", "color: #ff0000"]);
+  const [str, styles] = comelog.bold().red("red").flush("flush");
+  expect(str).toBe("%cred flush");
+  expect(styles).toEqual(["font-weight: bold; color: #ff0000"]);
 });
 
 test("option", () => {
-  comelog
+  const [str, styles] = comelog
     .option({ separator: "" })
     .bold("bold")
     .bgSnow("bgSnow")
     .flush("flush");
-  expect(comelog.str).toBe("%cbold%cbgSnowflush");
-  expect(comelog.styles).toEqual([
-    "font-weight: bold",
-    "background-color: #fffafa",
-  ]);
+  expect(str).toBe("%cbold%cbgSnowflush");
+  expect(styles).toEqual(["font-weight: bold", "background-color: #fffafa"]);
 });

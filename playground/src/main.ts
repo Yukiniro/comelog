@@ -12,5 +12,6 @@ app.innerHTML = `
 const btn = document.querySelector("#btn");
 btn?.addEventListener("click", () => {
   console.clear();
-  comelog.red().bold().flush("hello world");
+  comelog.red().bold().underline().font().flush("hello world");
+  comelog.white().bgOrange().padding().radius().flush("hello world");
 });

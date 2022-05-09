@@ -1,11 +1,12 @@
 import { isUndefined } from "bittydash";
-import { LogOption } from "./types";
+import { LogOption, Message, Styles } from "./types";
 import { styleToCss } from "./util";
 import { colors, bgColors } from "./preset/colorsStyle";
+import { modifies } from "./preset/modifeStyle";
 
 class Comelog {
-  private _str: string;
-  private _styles: Array<string>;
+  private _str: Message;
+  private _styles: Styles;
   private _option: LogOption;
   [name: string]: any;
 
@@ -17,11 +18,11 @@ class Comelog {
     };
   }
 
-  get str(): string {
+  get str(): Message {
     return this._str;
   }
 
-  get styles(): Array<string> {
+  get styles(): Styles {
     return this._styles;
   }
 
@@ -30,25 +31,16 @@ class Comelog {
       ...this._option,
       ...value,
     };
-
     return this;
   }
 
-  bold(message?: string): this {
-    this.composeStyle(
-      {
-        fontWeight: "bold",
-      },
-      this.composeMessage(message)
-    );
-    return this;
-  }
-
-  composeMessage(message?: string, isFlush?: boolean): boolean {
+  composeMessage(message?: Message, isFlush?: boolean): boolean {
     const msg = isUndefined(message) ? "" : message;
     const separator =
-      this._str !== "" && msg !== "" ? this._option.separator : "";
-    if (this._str.lastIndexOf("%c") === this._str.length - 2) {
+      !/%c$/.test(this._str) && this._str !== "" && msg !== ""
+        ? this._option.separator
+        : "";
+    if (/%c$/.test(this._str)) {
       this._str = `${this._str}${separator}${msg}`;
       return true;
     } else {
@@ -68,12 +60,12 @@ class Comelog {
     }
   }
 
-  flush(message?: string) {
+  flush(message?: Message): Array<Message | Styles> {
     this.composeMessage(message, true);
-    queueMicrotask(() => {
-      this.clear();
-    });
+    const result = [this._str, [...this._styles]];
     console.log(this._str, ...this._styles);
+    this.clear();
+    return result;
   }
 
   clear() {
@@ -92,6 +84,15 @@ for (const [key, value] of Object.entries({ ...colors, ...bgColors })) {
         style.color = value;
       }
       this.composeStyle(style, this.composeMessage(message));
+      return this;
+    },
+  });
+}
+
+for (const [key, value] of Object.entries({ ...modifies })) {
+  Object.defineProperty(Comelog.prototype, key, {
+    value: function (message: string): Comelog {
+      this.composeStyle(value, this.composeMessage(message));
       return this;
     },
   });
