@@ -5,12 +5,14 @@ import { colors, bgColors } from "./preset/colorsStyle";
 import { modifies } from "./preset/modifeStyle";
 
 class Comelog {
+  private _styleFlag: boolean;
   private _str: Message;
   private _styles: Styles;
   private _option: LogOption;
   [name: string]: any;
 
   constructor() {
+    this._styleFlag = false;
     this._str = "";
     this._styles = [];
     this._option = {
@@ -34,24 +36,26 @@ class Comelog {
     return this;
   }
 
-  composeMessage(message?: Message, isFlush?: boolean): boolean {
+  openFlag() {
+    this._styleFlag = true;
+  }
+
+  closeFlag() {
+    this._styleFlag = false;
+  }
+
+  composeMessage(message?: Message) {
     const msg = isUndefined(message) ? "" : message;
     const separator =
       !/%c$/.test(this._str) && this._str !== "" && msg !== ""
         ? this._option.separator
         : "";
-    if (/%c$/.test(this._str)) {
-      this._str = `${this._str}${separator}${msg}`;
-      return true;
-    } else {
-      this._str = `${this._str}${separator}${isFlush ? "" : "%c"}${msg}`;
-      return false;
-    }
+    this._str = `${this._str}${separator}${this._styleFlag ? "%c" : ""}${msg}`;
   }
 
-  composeStyle(style: string | object = "", shouldMergeStyle: boolean) {
+  composeStyle(style: string | object = "") {
     const styleCss = styleToCss(style);
-    if (shouldMergeStyle) {
+    if (this._styleFlag) {
       const tailIndex = this._styles.length - 1;
       const tailValue = this._styles[tailIndex];
       this._styles[tailIndex] = `${tailValue}; ${styleCss}`;
@@ -60,8 +64,14 @@ class Comelog {
     }
   }
 
+  text(message: Message = ""): this {
+    this.composeMessage(message);
+    this.closeFlag();
+    return this;
+  }
+
   flush(message?: Message): Array<Message | Styles> {
-    this.composeMessage(message, true);
+    this.text(message);
     const result = [this._str, [...this._styles]];
     console.log(this._str, ...this._styles);
     this.clear();
@@ -76,14 +86,15 @@ class Comelog {
 
 for (const [key, value] of Object.entries({ ...colors, ...bgColors })) {
   Object.defineProperty(Comelog.prototype, key, {
-    value: function (message: string): Comelog {
+    value: function (): Comelog {
       const style: { [key: string]: string } = {};
       if (key.indexOf("bg") === 0) {
         style.backgroundColor = value;
       } else {
         style.color = value;
       }
-      this.composeStyle(style, this.composeMessage(message));
+      this.composeStyle(style);
+      this.openFlag();
       return this;
     },
   });
@@ -91,8 +102,9 @@ for (const [key, value] of Object.entries({ ...colors, ...bgColors })) {
 
 for (const [key, value] of Object.entries({ ...modifies })) {
   Object.defineProperty(Comelog.prototype, key, {
-    value: function (message: string): Comelog {
-      this.composeStyle(value, this.composeMessage(message));
+    value: function (): Comelog {
+      this.composeStyle(value);
+      this.openFlag();
       return this;
     },
   });
