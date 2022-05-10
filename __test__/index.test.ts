@@ -1,4 +1,4 @@
-import { test, expect } from "vitest";
+import { test, expect, describe } from "vitest";
 import { comelog } from "../src/index";
 
 const text = "hello world";
@@ -29,3 +29,20 @@ test("option", () => {
   expect(styles).toEqual(["font-weight: bold", "background-color: #fffafa"]);
 });
 
+describe("Test style function", () => {
+  test("Style with string", () => {
+    const [str, styles] = comelog.style("font-weight: bold").flush("bold text");
+    expect(str).toBe("%cbold text");
+    expect(styles).toEqual(["font-weight: bold"]);
+  });
+  test("Style with object", () => {
+    const [str, styles] = comelog
+      .style({
+        color: "#FF0000",
+        background: "#000000",
+      })
+      .flush("color text");
+    expect(str).toBe("%ccolor text");
+    expect(styles).toEqual(["color: #FF0000; background: #000000"]);
+  });
+});

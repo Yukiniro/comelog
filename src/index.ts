@@ -9,7 +9,7 @@ class Comelog {
   private _str: Message;
   private _styles: Styles;
   private _option: LogOption;
-  [name: string]: any;
+  [name: string]: any; // fix type check for style funtion. (eg: bold, red)
 
   constructor() {
     this._styleFlag = false;
@@ -62,6 +62,12 @@ class Comelog {
     } else {
       this._styles.push(styleCss);
     }
+  }
+
+  style(style: string | object): this {
+    this.composeStyle(style);
+    this.openFlag();
+    return this;
   }
 
   text(message: Message = ""): this {
