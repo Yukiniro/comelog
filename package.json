@@ -1,7 +1,7 @@
 {
   "name": "comelog",
-  "version": "0.0.4",
-  "description": "🎨 The `comelog` is a comely and styled logger.",
+  "version": "0.0.5",
+  "description": "🎨 Comely style logs for the browser.",
   "main": "dist/comelog.cjs",
   "module": "dist/comelog.mjs",
   "files": [
