@@ -2,6 +2,9 @@ const modifies = {
   bold: {
     fontWeight: "bold",
   },
+  italic: {
+    fontStyle: "italic",
+  },
   border: {
     border: "1px solid #000000",
   },
