@@ -4,6 +4,8 @@
 
 Comely style logs for the browser.
 
+![log](./public/image/log.png)
+
 # Features
 
 - 🚀 Flexible API
@@ -34,9 +36,25 @@ comelog.bgOrange().text("bk orange").underline().flush("undeline");
 
 # API
 
-Chain styles to use for the string argument with text or flush function. The next style function will be merged. For example, `comelog.red().bold().text("value 1").bgRed().flush("value 2")` will print `value 1` with red and bold style. And the `value 2` has red background.
+Chain styles to use for the string argument with text or flush function. The next to each other style function will be merged. For example, `comelog.red().bold().text("value 1").bgRed().flush("value 2")` will print `value 1` with red and bold style. And the `value 2` has red background.
 
-The `flush` must be the last.
+The `flush` must appear last in the chain.
+
+## `color`
+
+The `color` function will set the color for text.
+
+```js
+comelog.color("#FF0000").flush("Red Color");
+```
+
+## `bgColor`
+
+The `bgColor` function will set the background color for text.
+
+```js
+comelog.bgColor("#FFFFFF").flush("White BG");
+```
 
 ## `text`
 
@@ -59,7 +77,8 @@ comelog.red().flush("red flush");
 You could use `style` function to custom style.
 
 ```js
-comelog.style({ color: "#FF0000" }).flush("red flush");
+comelog.style({ color: "#FF0000" }).flush("Red Text");
+comelog.style({ backgroundColor: "#FFFFFF" }).flush("White BG");
 ```
 
 ## Styles
@@ -77,6 +96,7 @@ comelog.white().bgOrange().flush("hello world");
 ### Modifiers
 
 - bold
+- italic
 - border
 - radius
 - shadow
@@ -91,4 +111,5 @@ comelog.white().bgOrange().flush("hello world");
 
 ```js
 comelog.blod().underline().flush("hello world");
+comelog.lowercase().capitalize().flush("hello world");
 ```
