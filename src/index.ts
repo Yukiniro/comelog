@@ -76,6 +76,18 @@ class Comelog {
     return this;
   }
 
+  color(color: string): this {
+    this.composeStyle({ color });
+    this.openFlag();
+    return this;
+  }
+
+  bgColor(bgColor: string): this {
+    this.composeStyle({ backgroundColor: bgColor });
+    this.openFlag();
+    return this;
+  }
+
   flush(message?: Message): Array<Message | Styles> {
     this.text(message);
     const result = [this._str, [...this._styles]];

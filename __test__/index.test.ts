@@ -46,3 +46,15 @@ describe("Test style function", () => {
     expect(styles).toEqual(["color: #FF0000; background: #000000"]);
   });
 });
+
+test("Test color function", () => {
+  const [str, styles] = comelog.color("#FF0000").flush("Red Text");
+  expect(str).toBe("%cRed Text");
+  expect(styles).toEqual(["color: #FF0000"]);
+});
+
+test("Test bgColor function", () => {
+  const [str, styles] = comelog.bgColor("#FFFFFF").flush("White BG");
+  expect(str).toBe("%cWhite BG");
+  expect(styles).toEqual(["background-color: #FFFFFF"]);
+})
