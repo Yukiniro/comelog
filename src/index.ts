@@ -20,31 +20,16 @@ class Comelog {
     };
   }
 
-  get str(): Message {
-    return this._str;
-  }
 
-  get styles(): Styles {
-    return this._styles;
-  }
-
-  option(value: LogOption): this {
-    this._option = {
-      ...this._option,
-      ...value,
-    };
-    return this;
-  }
-
-  openFlag() {
+  private openFlag() {
     this._styleFlag = true;
   }
 
-  closeFlag() {
+  private closeFlag() {
     this._styleFlag = false;
   }
 
-  composeMessage(message?: Message) {
+  private composeMessage(message?: Message) {
     const msg = isUndefined(message) ? "" : message;
     const separator =
       !/%c$/.test(this._str) && this._str !== "" && msg !== ""
@@ -53,7 +38,7 @@ class Comelog {
     this._str = `${this._str}${separator}${this._styleFlag ? "%c" : ""}${msg}`;
   }
 
-  composeStyle(style: string | object = "") {
+  private composeStyle(style: string | object = "") {
     const styleCss = styleToCss(style);
     if (this._styleFlag) {
       const tailIndex = this._styles.length - 1;
@@ -62,6 +47,14 @@ class Comelog {
     } else {
       this._styles.push(styleCss);
     }
+  }
+
+  option(value: LogOption): this {
+    this._option = {
+      ...this._option,
+      ...value,
+    };
+    return this;
   }
 
   style(style: string | object): this {
