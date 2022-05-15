@@ -19,7 +19,14 @@ function getConfig(libraryName) {
       },
     ],
     plugins: [
-      typescript(),
+      typescript({
+        tsconfigDefaults: {
+          include: ["src/**/*.ts"],
+          compilerOptions: {
+            declaration: true,
+          },
+        },
+      }),
       nodeResolve(),
       commonjs(),
       babel({

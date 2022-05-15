@@ -1,9 +1,10 @@
 {
   "name": "comelog",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "🎨 Comely style logs for the browser.",
   "main": "dist/comelog.cjs",
   "module": "dist/comelog.mjs",
+  "types": "dist",
   "files": [
     "dist"
   ],
