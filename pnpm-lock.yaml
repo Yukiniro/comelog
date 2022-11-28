@@ -10,7 +10,7 @@ specifiers:
   '@rollup/plugin-node-resolve': ^13.3.0
   '@rollup/plugin-typescript': ^8.3.1
   '@yukiniro/eslint-config': ^0.0.6
-  bittydash: ^0.0.12
+  bittydash: ^0.3.0
   c8: ^7.11.2
   camelcase-to-kebab: ^1.0.0
   eslint: ^8.11.0
@@ -34,7 +34,7 @@ devDependencies:
   '@rollup/plugin-node-resolve': 13.3.0_rollup@2.70.1
   '@rollup/plugin-typescript': 8.3.1_859e05ab655ea3c900a5f26a0311c0b5
   '@yukiniro/eslint-config': 0.0.6
-  bittydash: 0.0.12
+  bittydash: 0.3.3
   c8: 7.11.2
   camelcase-to-kebab: 1.0.0
   eslint: 8.11.0
@@ -2019,8 +2019,8 @@ packages:
       tweetnacl: 0.14.5
     dev: true
 
-  /bittydash/0.0.12:
-    resolution: {integrity: sha512-neTmowPQwNzDsZ1CV07SmS3DdF5O2w3gWdQJEtK7lBdxvjmG6/c3w52ePJujcPEKqI+Azvamp5o5f7M5t8Q2Kg==}
+  /bittydash/0.3.3:
+    resolution: {integrity: sha512-mRTDVjSjPXjjOZUSsJjUvjcyyPO2LNfwA/DKa/TyjycftP1ZQBHsk0GKqZk90lENOJRMOBUNNXbyUsM2SPpbXQ==}
     dev: true
 
   /boxen/5.1.2:
