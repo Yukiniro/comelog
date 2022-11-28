@@ -41,7 +41,7 @@
     "@rollup/plugin-commonjs": "^22.0.0",
     "@rollup/plugin-node-resolve": "^13.3.0",
     "@rollup/plugin-typescript": "^8.3.1",
-    "@yukiniro/eslint-config": "^0.0.3",
+    "@yukiniro/eslint-config": "^0.0.6",
     "bittydash": "^0.0.12",
     "c8": "^7.11.2",
     "camelcase-to-kebab": "^1.0.0",
