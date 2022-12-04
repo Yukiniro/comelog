@@ -24,7 +24,9 @@
     "console",
     "comely",
     "style",
-    "chalk"
+    "chalk",
+    "logger",
+    "print"
   ],
   "author": "Yukiniro",
   "license": "MIT",

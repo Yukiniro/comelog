@@ -40,6 +40,32 @@ Chain styles to use for the string argument with text or flush function. The nex
 
 The `flush` must appear last in the chain.
 
+Comelog supports some preset API. `info`, `warn`, and `error` are easy to use. And these APIs must appear last in the chain because they invoke the `flush` API.
+
+## `info`
+
+```js
+comelog.info("I am info.");
+```
+
+![info.png](/public/image/info.png)
+
+## `warn`
+
+```js
+comelog.info("I am warn.");
+```
+
+![warn.png](/public/image/warn.png)
+
+## `error`
+
+```js
+comelog.info("I am error.");
+```
+
+![error.png](/public/image/error.png)
+
 ## `color`
 
 The `color` function will set the color for text.
