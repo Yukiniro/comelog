@@ -39,4 +39,8 @@ btn?.addEventListener("click", () => {
     .bgGold()
     .text("bgGold")
     .flush();
+
+  comelog.info("I am info.");
+  comelog.warn("I am warn.");
+  comelog.error("I am error.");
 });

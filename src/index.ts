@@ -20,7 +20,6 @@ class Comelog {
     };
   }
 
-
   private openFlag() {
     this._styleFlag = true;
   }
@@ -92,6 +91,26 @@ class Comelog {
   clear() {
     this._str = "";
     this._styles.length = 0;
+  }
+
+  baseInfo(): this {
+    this.padding("2px 6px").radius("2px");
+    return this;
+  }
+
+  info(message: Message): this {
+    this.baseInfo().bgColor("#00E079").text(message).flush();
+    return this;
+  }
+
+  warn(message: Message): this {
+    this.baseInfo().bgColor("#FFF143").text(message).flush();
+    return this;
+  }
+
+  error(message: Message): this {
+    this.baseInfo().bgColor("#FF2121").text(message).flush();
+    return this;
   }
 }
 
