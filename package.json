@@ -1,6 +1,6 @@
 {
   "name": "comelog",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "🎨 Comely style logs for the browser.",
   "main": "dist/comelog.cjs",
   "module": "dist/comelog.mjs",
@@ -10,7 +10,7 @@
   ],
   "scripts": {
     "dev": "vite",
-    "build": "rollup -c rollup.config.js",
+    "build": "npx rollup -c rollup.config.mjs",
     "preview": "vite preview",
     "lint": "npx eslint src/**",
     "prettier": "npx prettier src/** --write",
@@ -50,7 +50,7 @@
     "eslint": "^8.11.0",
     "prettier": "^2.6.0",
     "prettier-eslint": "^13.0.0",
-    "rollup": "^2.70.1",
+    "rollup": "^3.19.1",
     "rollup-plugin-filesize": "^10.0.0",
     "rollup-plugin-terser": "^7.0.2",
     "rollup-plugin-typescript2": "^0.34.0",
