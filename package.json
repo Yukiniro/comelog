@@ -1,6 +1,6 @@
 {
   "name": "comelog",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "🎨 Comely style logs for the browser.",
   "main": "dist/comelog.cjs",
   "module": "dist/comelog.mjs",
@@ -40,13 +40,8 @@
     "@babel/preset-env": "^7.16.11",
     "@babel/preset-typescript": "^7.16.7",
     "@rollup/plugin-babel": "^6.0.0",
-<<<<<<< HEAD
     "@rollup/plugin-commonjs": "^24.0.0",
-    "@rollup/plugin-node-resolve": "^13.3.0",
-=======
-    "@rollup/plugin-commonjs": "^22.0.0",
     "@rollup/plugin-node-resolve": "^15.0.0",
->>>>>>> origin/renovate/rollup-plugin-node-resolve-15.x
     "@rollup/plugin-typescript": "^11.0.0",
     "@yukiniro/eslint-config": "^0.0.6",
     "bittydash": "^0.4.0",

@@ -9,6 +9,7 @@ class Comelog {
   private _str: Message;
   private _styles: Styles;
   private _option: LogOption;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   [name: string]: any; // fix type check for style funtion. (eg: bold, red)
 
   constructor() {

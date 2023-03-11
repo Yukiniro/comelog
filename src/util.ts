@@ -1,7 +1,7 @@
 import { isObject, isString } from "bittydash";
 import { camelCaseToKebab } from "camelcase-to-kebab";
 
-function styleToCss(style: string | Object): string {
+function styleToCss(style: string | object): string {
   if (isString(style)) {
     return style as string;
   }
