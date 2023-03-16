@@ -10,7 +10,7 @@ specifiers:
   '@rollup/plugin-node-resolve': ^15.0.0
   '@rollup/plugin-typescript': ^11.0.0
   '@yukiniro/eslint-config': ^0.0.6
-  bittydash: ^0.4.0
+  bittydash: ^0.5.0
   c8: ^7.11.2
   camelcase-to-kebab: ^1.0.0
   eslint: ^8.11.0
@@ -34,7 +34,7 @@ devDependencies:
   '@rollup/plugin-node-resolve': 15.0.1_rollup@3.19.1
   '@rollup/plugin-typescript': 11.0.0_khaxeid5xwlaz6kdebihm73eka
   '@yukiniro/eslint-config': 0.0.6
-  bittydash: 0.4.4
+  bittydash: 0.5.5
   c8: 7.11.2
   camelcase-to-kebab: 1.0.0
   eslint: 8.11.0
@@ -2129,8 +2129,8 @@ packages:
     resolution: {integrity: sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw==}
     dev: true
 
-  /bittydash/0.4.4:
-    resolution: {integrity: sha512-X/o8ofSGXPCqxWTEPOm1x9DYIF0stCneRydYUqRJRd19mi52+73Mqkb1XZ9saQZT9ffSCo0I4GppJ+xBIxJfDQ==}
+  /bittydash/0.5.5:
+    resolution: {integrity: sha512-c2Y6cKFQRrbU2jZPhIdNuoXopSwV/QxL0jUxUAbzEhQuEqRYJNNmbyHxG0LACYQbK0kVPy5zRa/+m0HOlAL5Pg==}
     dev: true
 
   /boxen/5.1.2:
