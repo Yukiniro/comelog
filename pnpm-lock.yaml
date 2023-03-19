@@ -21,7 +21,7 @@ specifiers:
   rollup-plugin-terser: ^7.0.2
   rollup-plugin-typescript2: ^0.34.0
   tslib: ^2.3.1
-  typescript: ^4.6.2
+  typescript: ^5.0.0
   vitest: ^0.29.0
 
 devDependencies:
@@ -32,7 +32,7 @@ devDependencies:
   '@rollup/plugin-babel': 6.0.3_wt3ncu7ziksifkg4flfqtdzsem
   '@rollup/plugin-commonjs': 24.0.1_rollup@3.19.1
   '@rollup/plugin-node-resolve': 15.0.1_rollup@3.19.1
-  '@rollup/plugin-typescript': 11.0.0_khaxeid5xwlaz6kdebihm73eka
+  '@rollup/plugin-typescript': 11.0.0_qyhiunlupbe6kl6lrji2fm5js4
   '@yukiniro/eslint-config': 0.0.6
   bittydash: 0.4.4
   c8: 7.11.2
@@ -43,9 +43,9 @@ devDependencies:
   rollup: 3.19.1
   rollup-plugin-filesize: 10.0.0
   rollup-plugin-terser: 7.0.2_rollup@3.19.1
-  rollup-plugin-typescript2: 0.34.1_hde3lwm6shh4rf6ycmkq5zyfka
+  rollup-plugin-typescript2: 0.34.1_7iejawhbqmte5pthjozf4tfuqy
   tslib: 2.3.1
-  typescript: 4.6.2
+  typescript: 5.0.2
   vitest: 0.29.2
 
 packages:
@@ -1524,7 +1524,7 @@ packages:
       rollup: 3.19.1
     dev: true
 
-  /@rollup/plugin-typescript/11.0.0_khaxeid5xwlaz6kdebihm73eka:
+  /@rollup/plugin-typescript/11.0.0_qyhiunlupbe6kl6lrji2fm5js4:
     resolution: {integrity: sha512-goPyCWBiimk1iJgSTgsehFD5OOFHiAknrRJjqFCudcW8JtWiBlK284Xnn4flqMqg6YAjVG/EE+3aVzrL5qNSzQ==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
@@ -1541,7 +1541,7 @@ packages:
       resolve: 1.22.1
       rollup: 3.19.1
       tslib: 2.3.1
-      typescript: 4.6.2
+      typescript: 5.0.2
     dev: true
 
   /@rollup/pluginutils/4.2.0:
@@ -4755,7 +4755,7 @@ packages:
       terser: 5.12.1
     dev: true
 
-  /rollup-plugin-typescript2/0.34.1_hde3lwm6shh4rf6ycmkq5zyfka:
+  /rollup-plugin-typescript2/0.34.1_7iejawhbqmte5pthjozf4tfuqy:
     resolution: {integrity: sha512-P4cHLtGikESmqi1CA+tdMDUv8WbQV48mzPYt77TSTOPJpERyZ9TXdDgjSDix8Fkqce6soYz3+fa4lrC93IEkcw==}
     peerDependencies:
       rollup: '>=1.26.3'
@@ -4767,7 +4767,7 @@ packages:
       rollup: 3.19.1
       semver: 7.3.8
       tslib: 2.5.0
-      typescript: 4.6.2
+      typescript: 5.0.2
     dev: true
 
   /rollup/2.79.1:
@@ -5244,6 +5244,12 @@ packages:
   /typescript/4.6.2:
     resolution: {integrity: sha512-HM/hFigTBHZhLXshn9sN37H085+hQGeJHJ/X7LpBWLID/fbc2acUMfU+lGD98X81sKP+pFa9f0DZmCwB9GnbAg==}
     engines: {node: '>=4.2.0'}
+    hasBin: true
+    dev: true
+
+  /typescript/5.0.2:
+    resolution: {integrity: sha512-wVORMBGO/FAs/++blGNeAVdbNKtIh1rbBL2EyQ1+J9lClJ93KiiKe8PmFIVdXhHcyv44SL9oglmfeSsndo0jRw==}
+    engines: {node: '>=12.20'}
     hasBin: true
     dev: true
 
