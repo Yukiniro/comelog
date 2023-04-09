@@ -56,6 +56,6 @@
     "rollup-plugin-typescript2": "^0.34.0",
     "tslib": "^2.3.1",
     "typescript": "^5.0.0",
-    "vitest": "^0.29.0"
+    "vitest": "^0.30.0"
   }
 }
