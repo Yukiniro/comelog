@@ -17,7 +17,7 @@
     "test": "npx vitest",
     "test:run": "npx vitest run",
     "test:coverrage": "npx vitest --coverage",
-    "publish": "pnpm run build && pnpm publish"
+    "publish:npm": "pnpm run build && pnpm publish"
   },
   "keywords": [
     "log",
