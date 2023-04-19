@@ -34,6 +34,9 @@
     "type": "git",
     "url": "https://github.com/Yukiniro/comelog"
   },
+  "dependencies": {
+    "camelcase-to-kebab": "^1.0.0"
+  },
   "devDependencies": {
     "@babel/core": "^7.17.8",
     "@babel/plugin-transform-modules-commonjs": "^7.17.7",
@@ -42,20 +45,19 @@
     "@rollup/plugin-babel": "^6.0.0",
     "@rollup/plugin-commonjs": "^24.0.0",
     "@rollup/plugin-node-resolve": "^15.0.0",
+    "@rollup/plugin-terser": "^0.4.1",
     "@rollup/plugin-typescript": "^11.0.0",
     "@yukiniro/eslint-config": "^0.0.6",
     "bittydash": "^0.5.0",
     "c8": "^7.11.2",
-    "camelcase-to-kebab": "^1.0.0",
     "eslint": "^8.11.0",
     "prettier": "^2.6.0",
     "prettier-eslint": "^13.0.0",
-    "rollup": "^3.19.1",
+    "rollup": "^3.20.6",
     "rollup-plugin-filesize": "^10.0.0",
-    "rollup-plugin-terser": "^7.0.2",
-    "rollup-plugin-typescript2": "^0.34.0",
+    "rollup-plugin-typescript2": "^0.34.1",
     "tslib": "^2.3.1",
-    "typescript": "^5.0.0",
-    "vitest": "^0.29.0"
+    "typescript": "^5.0.4",
+    "vitest": "^0.30.1"
   }
 }
