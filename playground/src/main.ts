@@ -12,16 +12,10 @@ app.innerHTML = `
 const btn = document.querySelector("#btn");
 btn?.addEventListener("click", () => {
   console.clear();
-  comelog.red().bold().underline().font().flush("hello world");
-  comelog.blue().italic().uppercase().flush("hello world");
-  comelog.white().bgOrange().padding().radius().flush("hello world");
-  comelog
-    .shadow()
-    .bgWhite()
-    .border()
-    .padding()
-    .capitalize()
-    .flush("hello world");
+  comelog.red().bold().underline().font().log("hello world");
+  comelog.blue().italic().uppercase().log("hello world");
+  comelog.white().bgOrange().padding().radius().log("hello world");
+  comelog.shadow().bgWhite().border().padding().capitalize().log("hello world");
 
   comelog
     .orange()
@@ -38,7 +32,7 @@ btn?.addEventListener("click", () => {
     .text("italic")
     .bgGold()
     .text("bgGold")
-    .flush();
+    .log();
 
   comelog.info("I am info.");
   comelog.warn("I am warn.");
