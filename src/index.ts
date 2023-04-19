@@ -89,6 +89,12 @@ class Comelog {
     return result;
   }
 
+  log(message?: Message) {
+    this.text(message);
+    console.log(this._str, ...this._styles);
+    this.clear();
+  }
+
   clear() {
     this._str = "";
     this._styles.length = 0;

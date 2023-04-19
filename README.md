@@ -90,12 +90,23 @@ The `text` function add the message to log.
 comelog.text("text").flush();
 ```
 
-## `flush`
+## `log`
 
-It is similar to `text`. But `flush` will finish the chain and print all message to devtools.
+It is similar to `text`. But `log` will finish the chain and print all message to devtools.
 
 ```js
-comelog.red().flush("red flush");
+comelog.red().flush("red log");
+```
+
+## `flush`
+
+> This api should only be used by developers. It is recommended to use `log` instead of.
+
+It is similar to `log`. But `flush` will return the whole data.
+
+```js
+const data = comelog.red().flush("red flush");
+console.log(data);
 ```
 
 ## `style`
