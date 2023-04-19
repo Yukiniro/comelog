@@ -89,6 +89,12 @@ class Comelog {
     return result;
   }
 
+  log(message?: Message) {
+    this.text(message);
+    console.log(this._str, ...this._styles);
+    this.clear();
+  }
+
   clear() {
     this._str = "";
     this._styles.length = 0;
@@ -100,17 +106,17 @@ class Comelog {
   }
 
   info(message: Message): this {
-    this.baseInfo().bgColor("#00E079").text(message).flush();
+    this.baseInfo().bgColor("#00E079").color("#000000").text(message).flush();
     return this;
   }
 
   warn(message: Message): this {
-    this.baseInfo().bgColor("#FFF143").text(message).flush();
+    this.baseInfo().bgColor("#FFF143").color("#000000").text(message).flush();
     return this;
   }
 
   error(message: Message): this {
-    this.baseInfo().bgColor("#FF2121").text(message).flush();
+    this.baseInfo().bgColor("#FF2121").color("#000000").text(message).flush();
     return this;
   }
 }
