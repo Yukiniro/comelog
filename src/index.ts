@@ -30,9 +30,9 @@ class Comelog {
   }
 
   private composeMessage(message?: Message) {
-    const msg = isUndefined(message) ? "" : message;
+    const msg: string = isUndefined(message) ? "" : message.toString();
     const separator =
-      !/%c$/.test(this._str) && this._str !== "" && msg !== ""
+      !/%c$/.test(this._str as string) && this._str !== "" && msg !== ""
         ? this._option.separator
         : "";
     this._str = `${this._str}${separator}${this._styleFlag ? "%c" : ""}${msg}`;
