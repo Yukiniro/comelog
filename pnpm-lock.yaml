@@ -6,7 +6,7 @@ specifiers:
   '@babel/preset-env': ^7.16.11
   '@babel/preset-typescript': ^7.16.7
   '@rollup/plugin-babel': ^6.0.0
-  '@rollup/plugin-commonjs': ^24.0.0
+  '@rollup/plugin-commonjs': ^25.0.0
   '@rollup/plugin-node-resolve': ^15.0.0
   '@rollup/plugin-typescript': ^11.0.0
   '@yukiniro/eslint-config': ^0.0.6
@@ -33,7 +33,7 @@ devDependencies:
   '@babel/preset-env': 7.16.11_@babel+core@7.17.8
   '@babel/preset-typescript': 7.16.7_@babel+core@7.17.8
   '@rollup/plugin-babel': 6.0.3_otduhfj4q6gqekcaozdpkuswqm
-  '@rollup/plugin-commonjs': 24.0.1_rollup@3.20.6
+  '@rollup/plugin-commonjs': 25.0.1_rollup@3.20.6
   '@rollup/plugin-node-resolve': 15.0.1_rollup@3.20.6
   '@rollup/plugin-typescript': 11.0.0_utxf53tvabb4u2gwdqqqdsbwsm
   '@yukiniro/eslint-config': 0.0.6
@@ -1659,8 +1659,8 @@ packages:
       rollup: 3.20.6
     dev: true
 
-  /@rollup/plugin-commonjs/24.0.1_rollup@3.20.6:
-    resolution: {integrity: sha512-15LsiWRZk4eOGqvrJyu3z3DaBu5BhXIMeWnijSRvd8irrrg9SHpQ1pH+BUK4H6Z9wL9yOxZJMTLU+Au86XHxow==}
+  /@rollup/plugin-commonjs/25.0.1_rollup@3.20.6:
+    resolution: {integrity: sha512-2DJ4kv4b1xfTJopWhu61ANdNRHvzQZ2fpaIrlgaP2jOfUv1wDJ0Ucqy8AZlbFmn/iUjiwKoqki9j55Y6L8kyNQ==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
       rollup: ^2.68.0||^3.0.0
@@ -1762,10 +1762,6 @@ packages:
 
   /@types/eslint-visitor-keys/1.0.0:
     resolution: {integrity: sha512-OCutwjDZ4aFS6PB1UZ988C4YgwlBHJd6wCeQqaLdmadZ/7e+w79+hbMUFC1QXDNCmdyoRfAFdm0RypzwR+Qpag==}
-    dev: true
-
-  /@types/estree/0.0.39:
-    resolution: {integrity: sha512-EYNwp3bU+98cpU4lAWYYL7Zz+2gryWH1qbdDTidVd6hkiR6weksdbMadyXKXNPEkQFhXM+hVO9ZygomHXp+AIw==}
     dev: true
 
   /@types/estree/1.0.0:
@@ -3688,7 +3684,7 @@ packages:
   /is-reference/1.2.1:
     resolution: {integrity: sha512-U82MsXXiFIrjCK4otLT+o2NA2Cd2g5MLoOVXUZjIOhLurrRxpEXzI8O0KZHr3IjLvlAH1kTPYSuqer5T9ZVBKQ==}
     dependencies:
-      '@types/estree': 0.0.39
+      '@types/estree': 1.0.0
     dev: true
 
   /is-regex/1.1.4:
