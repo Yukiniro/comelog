@@ -14,7 +14,7 @@ specifiers:
   c8: ^8.0.0
   camelcase-to-kebab: ^1.0.0
   eslint: ^8.11.0
-  prettier: ^2.6.0
+  prettier: ^3.0.0
   prettier-eslint: ^13.0.0
   rollup: ^3.20.6
   rollup-plugin-filesize: ^10.0.0
@@ -40,7 +40,7 @@ devDependencies:
   bittydash: 0.7.1
   c8: 8.0.0
   eslint: 8.11.0
-  prettier: 2.6.0
+  prettier: 3.0.0
   prettier-eslint: 13.0.0
   rollup: 3.20.6
   rollup-plugin-filesize: 10.0.0
@@ -4734,7 +4734,7 @@ packages:
       indent-string: 4.0.0
       lodash.merge: 4.6.2
       loglevel-colored-level-prefix: 1.0.0
-      prettier: 2.6.0
+      prettier: 2.8.8
       pretty-format: 23.6.0
       require-relative: 0.8.7
       typescript: 3.9.10
@@ -4750,15 +4750,15 @@ packages:
       fast-diff: 1.2.0
     dev: true
 
-  /prettier/2.6.0:
-    resolution: {integrity: sha512-m2FgJibYrBGGgQXNzfd0PuDGShJgRavjUoRCw1mZERIWVSXF0iLzLm+aOqTAbLnC3n6JzUhAA8uZnFVghHJ86A==}
+  /prettier/2.8.8:
+    resolution: {integrity: sha512-tdN8qQGvNjw4CHbY+XXk0JgCXn9QiF21a55rBe5LJAU+kDyC4WQn4+awm2Xfk2lQMk5fKup9XgzTZtGkjBdP9Q==}
     engines: {node: '>=10.13.0'}
     hasBin: true
     dev: true
 
-  /prettier/2.8.8:
-    resolution: {integrity: sha512-tdN8qQGvNjw4CHbY+XXk0JgCXn9QiF21a55rBe5LJAU+kDyC4WQn4+awm2Xfk2lQMk5fKup9XgzTZtGkjBdP9Q==}
-    engines: {node: '>=10.13.0'}
+  /prettier/3.0.0:
+    resolution: {integrity: sha512-zBf5eHpwHOGPC47h0zrPyNn+eAEIdEzfywMoYn2XPi0P44Zp0tSq64rq0xAREh4auw2cJZHo9QUob+NqCQky4g==}
+    engines: {node: '>=14'}
     hasBin: true
     dev: true
 
