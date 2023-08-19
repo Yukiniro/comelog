@@ -90,9 +90,7 @@ class Comelog {
   }
 
   log(message?: Message) {
-    this.text(message);
-    console.log(this._str, ...this._styles);
-    this.clear();
+    this.flush(message);
   }
 
   clear() {
