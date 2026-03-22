@@ -1,12 +1,11 @@
-import { isObject, isString } from "bittydash";
 import { camelCaseToKebab } from "camelcase-to-kebab";
 
 function styleToCss(style: string | object): string {
-  if (isString(style)) {
-    return style as string;
+  if (typeof style === "string") {
+    return style;
   }
 
-  if (isObject(style)) {
+  if (typeof style === "object" && style !== null && !Array.isArray(style)) {
     let str = "";
     for (const [key, value] of Object.entries(style)) {
       const sub = `${camelCaseToKebab(key)}: ${value}`;

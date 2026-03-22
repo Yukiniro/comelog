@@ -1,4 +1,3 @@
-import { isUndefined } from "bittydash";
 import { LogOption, Message, Styles } from "./types";
 import { styleToCss } from "./util";
 import { colors, bgColors } from "./preset/colorsStyle";
@@ -30,7 +29,7 @@ class Comelog {
   }
 
   private composeMessage(message?: Message) {
-    const msg: string = isUndefined(message) ? "" : message.toString();
+    const msg: string = message === undefined ? "" : message.toString();
     const separator =
       !/%c$/.test(this._str as string) && this._str !== "" && msg !== ""
         ? this._option.separator
